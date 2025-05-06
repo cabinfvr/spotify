@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      {{ title }} - {{ artist }}
+    </title>
+    <style>h1 {
+    font-family: arial;
+    font-weight: normal;
+}
+
+html {
+    padding: 5px;
+    text-align: center;
+    	display: flex;
+	height: 100vh;
+	flex-direction: column;
+	justify-content: center;
+overflow: hidden;
+      background-color: black;
+    color: white;
+}
+
+      a {
+        color:white
+      }
+      a:visited {
+        color: whitesmoke;
+      }
+
+img {
+    border-radius: 5px;
+  border: solid 1px white;
+  height: 300px;
+  width: 300px;
+}
+
+      caption1 {
+        font-style: italic;
+        color: gray;
+        opacity: 50%;
+        font-family: arial;
+        font-size: 10px;
+      }
+      .e {
+    color: white;
+    font-family: arial;
+    text-transform: uppercase;
+    background: grey;
+    padding: 15px;
+    border-radius: 5px;
+    min-width: 70px;
+}
+    </style>
+    <link rel='icon' href='{{ final_image_url}}'>
+  </head>
+  <body>
+    <h1>
+      I am listening to <b><a href="{{ link }}">{{ title }}</a></b> by <b>{{ artist}}</b>. 🎧  {% if explicit %}<span class="e" title="This song is explicit.">e</span>{%endif%}  </h1>
+    <img src="{{ final_image_url }}">
+    <br>
+    <script>
+      `
+      /api/title
+      /api/artist
+      `
+
+      setInterval(() => {
+        window.location.reload();
+      }, 5 * 1000);
+    </script>
+  </body>
+</html>
