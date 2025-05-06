@@ -2,7 +2,6 @@
 # 🎧 spotify
 
 display your current spotify listening status through a sleek web UI + simple API. built with spotipy, the spotify api, and flask
-original by [albumcovers](https://github.com/albumcovers/spotify)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/cabinfvr/spotify)
 
