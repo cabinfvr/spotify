@@ -4,6 +4,7 @@ import os
 from flask import Flask, render_template, jsonify, redirect
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from flask_cors import CORS
 from spotipy.cache_handler import MemoryCacheHandler, CacheHandler
 
 class CustomCacheHandler(CacheHandler):
@@ -21,7 +22,9 @@ CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 REFRESH_TOKEN  = os.getenv('SPOTIFY_REFRESH_TOKEN')   
 
 
+
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 def get_access_token():
     """
