@@ -115,6 +115,11 @@ def make_simple_api(field_path):
 app.add_url_rule('/api/title',  'api_title',  make_simple_api(['name']),               methods=['GET'])
 app.add_url_rule('/api/artist', 'api_artist', make_simple_api(['artists',0,'name']),    methods=['GET'])
 app.add_url_rule('/api/image',  'api_image',  make_simple_api(['album','images',0,'url']), methods=['GET'])
+app.add_url_rule('/api/album',      'api_album',      make_simple_api(['album','name']), methods=['GET'])
+app.add_url_rule('/api/track_id',   'api_track_id',   make_simple_api(['id']), methods=['GET'])
+app.add_url_rule('/api/preview',    'api_preview',    make_simple_api(['preview_url']), methods=['GET'])
+app.add_url_rule('/api/popularity', 'api_popularity', make_simple_api(['popularity']), methods=['GET'])
+app.add_url_rule('/api/explicit',   'api_explicit',   make_simple_api(['explicit']), methods=['GET'])
 
 @app.errorhandler(500)
 def internal_error(error):
